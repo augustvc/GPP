@@ -11,5 +11,6 @@ August van Casteren
 Jeroen van Tubergen
 The simulation happens in Cloth.cs
 
+https://raw.githubusercontent.com/augustvc/GPP/main/ClothSimImage.png
 
 graphics code inspired by LearnOpenTK at https://opentk.net/learn/
