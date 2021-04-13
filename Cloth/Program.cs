@@ -58,6 +58,8 @@ namespace Cloth
             GL.EnableVertexAttribArray(aTexCoordLocation);
             GL.EnableVertexAttribArray(aNormalLocation);
 
+            GL.Enable(EnableCap.DepthTest);
+
             base.OnLoad(e);
         }
 
