@@ -6,9 +6,7 @@ Enter to start the simulation.
 
 B to blow wind forward (in the direction you're looking in) adding force to the cloth.
 
-All the code has been done by us
-August van Casteren
-Jeroen van Tubergen
+All the code has been done by us: August van Casteren and Jeroen van Tubergen
 The simulation happens in Cloth.cs
 
 ![img](https://raw.githubusercontent.com/augustvc/GPP/main/ClothSimImage.png)
