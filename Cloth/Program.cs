@@ -31,7 +31,7 @@ namespace Cloth
             shader = new Shader("shader.vert", "shader.frag");
             shader.Use();
 
-            clothTexture = new Texture("Green.png");
+            clothTexture = new Texture("../../Green.png");
             clothTexture.Use();
 
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)TextureWrapMode.MirroredRepeat);
