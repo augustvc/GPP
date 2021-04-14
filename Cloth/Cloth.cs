@@ -88,6 +88,8 @@ namespace Cloth
 
         public static float[] exportVertices()
         {
+            Dictionary<Vector3, Vector3> vertexNormals = new Dictionary<Vector3, Vector3>();
+
             float[] vertices = new float[(xRes - 1) * (yRes - 1) * 48];
             int i = 0;
             for(int x = 1; x < xRes; x++)
@@ -124,12 +126,30 @@ namespace Cloth
                             normal = normal2;
                         }
 
+                        if(!vertexNormals.ContainsKey(pos))
+                        {
+                            vertexNormals[pos] = normal;
+                        } else
+                        {
+                            vertexNormals[pos] += normal;
+                        }
+
                         for(int k = 0; k < 3; k++)
                         {
                             vertices[i++] = normal[k];
                         }
                     }
+
                 }
+            }
+
+            for (int j = 0; j < vertices.Length; j+= 8)
+            {
+                Vector3 normal = vertexNormals[new Vector3(vertices[j], vertices[j + 1], vertices[j + 2])];
+                normal.Normalize();
+                vertices[j + 5] = normal.X;
+                vertices[j + 6] = normal.Y;
+                vertices[j + 7] = normal.Z;
             }
 
             return vertices;
